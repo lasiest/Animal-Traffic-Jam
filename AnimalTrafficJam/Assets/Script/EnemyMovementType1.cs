@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovementType1 : MonoBehaviour
 {
     public bool start;
     public Transform startPost;
@@ -43,7 +43,4 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
-
-
-
 }
