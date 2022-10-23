@@ -9,6 +9,11 @@ public class playerController : MonoBehaviour
 
     Vector2 movement;
 
+    void awake()
+    {
+        gameObject.layer = 6;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -21,5 +26,34 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "SpeedBoost")
+        {
+            Debug.Log("touch SpeedBoost");
+            StartCoroutine(WaitSpeedBoost());
+        }
+
+        if (collision.gameObject.tag == "InvisibleBoost")
+        {
+            Debug.Log("touch InvisibleBoost");
+            StartCoroutine(WaitInvisibleBoost());
+        }
+    }
+
+    public IEnumerator WaitSpeedBoost()
+    {
+        moveSpeed = moveSpeed * 2;
+        yield return new WaitForSeconds(5f);
+        moveSpeed = moveSpeed / 2;
+    }
+
+    public IEnumerator WaitInvisibleBoost()
+    {
+        gameObject.layer = 8;
+        yield return new WaitForSeconds(5f);
+        gameObject.layer = 6;
     }
 }
