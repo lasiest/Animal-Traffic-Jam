@@ -6,12 +6,15 @@ public class playerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
+    public bool playerCaught;
+    public GameObject GameOverScene;
 
     Vector2 movement;
 
     void awake()
     {
         gameObject.layer = 6;
+        playerCaught = false;
     }
 
     // Update is called once per frame
@@ -21,6 +24,11 @@ public class playerController : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(x, y).normalized;
+
+        if (playerCaught)
+        {
+            GameOverScene.SetActive(true);
+        }
     }
 
     void FixedUpdate()

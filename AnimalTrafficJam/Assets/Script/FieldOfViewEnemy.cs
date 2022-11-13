@@ -12,12 +12,17 @@ public class FieldOfViewEnemy : MonoBehaviour
     public LayerMask objectlayer;
 
     public GameObject player;
+    playerController _playerController;
 
     public bool CanSeePlayer {get;private set;}
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
+        {
+            _playerController = player.GetComponent<playerController>();
+        }
     }
 
     void Start()
@@ -52,6 +57,7 @@ public class FieldOfViewEnemy : MonoBehaviour
                 if(!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, objectlayer))
                 {
                     CanSeePlayer = true;
+                    _playerController.playerCaught = true;
                 }
                 else
                 {
