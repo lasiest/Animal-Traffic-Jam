@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour
     public Rigidbody2D rb;
     public bool playerCaught;
     public GameObject GameOverScene;
+    public Animator animator;
 
     Vector2 movement;
 
@@ -22,6 +23,23 @@ public class playerController : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+
+        if(x != 0 || y != 0)
+        {
+            animator.SetBool("Move", true);
+        }
+        else
+        {
+            animator.SetBool("Move", false);
+        }
+
+        if(x > 0){
+            gameObject.transform.localScale = new Vector3(1,1,1);
+        }
+        if (x < 0)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
 
         movement = new Vector2(x, y).normalized;
 
