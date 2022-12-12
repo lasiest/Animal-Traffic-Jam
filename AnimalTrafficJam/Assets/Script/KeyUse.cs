@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class KeyUse : MonoBehaviour
 {
-    public GameObject effect;
-    private Transform player;
+
+    Inventory inventory;
+    BoxCollider2D _col;
+    PickupItem PickupItem;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        _col = gameObject.GetComponent<BoxCollider2D>();
+        PickupItem = GameObject.FindGameObjectWithTag("Key").GetComponent<PickupItem>();
     }
-
-    public void Use()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(effect, player.position, Quaternion.identity);
-        Destroy(gameObject);
+        Debug.Log("hit detected");
+        if (gameObject.tag=="Cage")
+        {
+            if (inventory.keycount > 0)
+            {
+                Debug.Log("hit cage");
+                _col.enabled = false;
+            }
+        }
+        
     }
 }

@@ -6,7 +6,6 @@ public class PickupItem : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
-
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -19,6 +18,10 @@ public class PickupItem : MonoBehaviour
             {
                 if (inventory.isFull[i] == false){
                     inventory.isFull[i] = true;
+                    if (gameObject.tag == "Key")
+                    {
+                        inventory.keycount++;
+                    }
                     Instantiate(itemButton, inventory.slots[i].transform,false);
                     Destroy(gameObject);
                     break;
