@@ -15,7 +15,6 @@ public class EnemyMovementType1 : MonoBehaviour
     void Start()
     {
         start = true;
-
     }
 
     // Update is called once per frame
