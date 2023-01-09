@@ -11,6 +11,7 @@ public class EnemyMovementType3 : MonoBehaviour
     public Transform finishPost;
 
     public float speed;
+    public float timeToWait;
 
     public float first_WalkDirection;
     public float first_StopDirection;
@@ -35,12 +36,12 @@ public class EnemyMovementType3 : MonoBehaviour
 
         if(start && finishPost.position == transform.position)
         {
-            StartCoroutine(WaitFirstPost(first_StopDirection, first_WalkDirection));
+            StartCoroutine(WaitFirstPost(first_StopDirection, first_WalkDirection, timeToWait));
 
         }
         else if(!start && startPost.position == transform.position)
         {
-            StartCoroutine(WaitSecondPost(last_StopDirection, last_WalkDirection));
+            StartCoroutine(WaitSecondPost(last_StopDirection, last_WalkDirection, timeToWait));
         }
         if (start)
         {
@@ -53,21 +54,21 @@ public class EnemyMovementType3 : MonoBehaviour
 
     }
 
-    IEnumerator WaitFirstPost(float rotate1, float rotate2){
+    IEnumerator WaitFirstPost(float rotate1, float rotate2, float timeToWait){
         // yield return new WaitForSeconds(5);
         Vector3 firstRotation = new Vector3(0, 0, rotate1);
         transform.eulerAngles = firstRotation;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeToWait);
         Vector3 LastRotation = new Vector3(0, 0, rotate2);
         transform.eulerAngles = LastRotation;
         start = false;
     }
 
-    IEnumerator WaitSecondPost(float rotate1, float rotate2){
+    IEnumerator WaitSecondPost(float rotate1, float rotate2, float timeToWait){
         // yield return new WaitForSeconds(5);
         Vector3 firstRotation = new Vector3(0, 0, rotate1);
         transform.eulerAngles = firstRotation;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeToWait);
         Vector3 LastRotation = new Vector3(0, 0, rotate2);
         transform.eulerAngles = LastRotation;
         start = true;
