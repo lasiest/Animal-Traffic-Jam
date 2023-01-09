@@ -21,8 +21,9 @@ public class GameOverScript : MonoBehaviour
 
     public void Restart()
     {
+        int scene = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
         
     }
 
