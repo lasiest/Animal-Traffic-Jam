@@ -22,12 +22,12 @@ public class EnemyMovementType2 : MonoBehaviour
     void Update()
     {
 
-        //Debug.Log(transform.rotation.z);
+        Debug.Log(transform.localRotation.z);
 
-        if(transform.rotation.z >= maxRotate1)
+        if(transform.localRotation.z >= maxRotate1)
         {
             toogle = false;
-        }else if(transform.rotation.z <= maxRotate2)
+        }else if(transform.localRotation.z <= maxRotate2)
         {
             toogle = true;
         }
