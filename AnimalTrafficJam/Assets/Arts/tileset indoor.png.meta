@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -91,6 +91,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -724,14 +748,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset indoor_1: 742207698
+      tileset indoor_17: -815284312
       tileset indoor_2: 1075708604
       tileset indoor_7: 1541186863
       tileset indoor_0: -2140027181
       tileset indoor_3: 2010982783
       tileset indoor_13: -1826640009
       tileset indoor_16: 1655526445
-      tileset indoor_12: -1548502585
+      tileset indoor_28: -34870675
       tileset indoor_15: -178768197
       tileset indoor_4: -271724631
       tileset indoor_19: 2089436451
@@ -751,8 +775,8 @@ TextureImporter:
       tileset indoor_14: 420701604
       tileset indoor_22: 391817368
       tileset indoor_27: -586125654
-      tileset indoor_28: -34870675
-      tileset indoor_17: -815284312
+      tileset indoor_12: -1548502585
+      tileset indoor_1: 742207698
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

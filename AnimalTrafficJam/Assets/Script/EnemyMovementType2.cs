@@ -22,7 +22,7 @@ public class EnemyMovementType2 : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(transform.localRotation.z);
+        // Debug.Log(transform.localRotation.z);
 
         if(transform.localRotation.z >= maxRotate1)
         {

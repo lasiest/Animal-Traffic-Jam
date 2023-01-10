@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1762767023322767610}
   - component: {fileID: 1762767023322767611}
   - component: {fileID: 1762767023322767607}
+  - component: {fileID: 2295562751413107973}
   m_Layer: 0
   m_Name: PowerUp(InvisibleBoost)
   m_TagString: InvisibleBoost
@@ -146,3 +147,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc94e5d2371ebaf49990a6045f7686d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2295562751413107973
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762767023322767612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5869a6f20107b14bba2314456032647, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
