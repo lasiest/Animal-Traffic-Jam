@@ -3099,7 +3099,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1118062692271854815}
   playerCaught: 0
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 8675597352743999345}
   animator: {fileID: 1118062692271854813}
 --- !u!1 &1807202155674808336
 GameObject:

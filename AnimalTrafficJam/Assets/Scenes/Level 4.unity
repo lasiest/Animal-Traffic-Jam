@@ -3235,7 +3235,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1118062691745878444}
   playerCaught: 0
-  GameOverScene: {fileID: 0}
+  GameOverScene: {fileID: 9136357279114741660}
   animator: {fileID: 1118062691745878446}
 --- !u!1 &1118062691745878417
 GameObject:
