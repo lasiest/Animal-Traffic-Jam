@@ -12,7 +12,7 @@ public class levelManager : MonoBehaviour
     public GameObject player;
     public GameObject collectableStar;
     public int maxAnimal;
-    public float star;
+    public int star;
     public bool firstStar;
     public bool secondStar;
     public bool thirdStar;

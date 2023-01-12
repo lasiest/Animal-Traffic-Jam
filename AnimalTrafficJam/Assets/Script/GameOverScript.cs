@@ -26,5 +26,9 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
         
     }
+    public void MainMenu(){
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level Selection");
+    }
 
 }
