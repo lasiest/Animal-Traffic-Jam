@@ -10,6 +10,7 @@ public class EnemyMovementType3 : MonoBehaviour
     public Transform startPost;
     public Transform finishPost;
 
+
     public float speed;
     public float timeToWait;
 
@@ -31,10 +32,9 @@ public class EnemyMovementType3 : MonoBehaviour
     void Update()
     {
 
-        
         //Debug.Log(transform.rotation.z);
 
-        if(start && finishPost.position == transform.position)
+        if (start && finishPost.position == transform.position)
         {
             StartCoroutine(WaitFirstPost(first_StopDirection, first_WalkDirection, timeToWait));
 

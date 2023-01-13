@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2765253614882719755}
   - component: {fileID: 2765253614882719748}
   - component: {fileID: 2765253614882719749}
-  - component: {fileID: 3299871211750510349}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -153,26 +152,6 @@ MonoBehaviour:
   maxRotate1: 0.5
   maxRotate2: -0.5
   toogle: 0
---- !u!95 &3299871211750510349
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2765253614882719751}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2765253615068366228
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3342606005070921783}
   - component: {fileID: 7764968456247069959}
+  - component: {fileID: 6633624376329479813}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -354,3 +334,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6633624376329479813
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696948314611596490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d55c083f8c7dc2845b136568a131bba9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
