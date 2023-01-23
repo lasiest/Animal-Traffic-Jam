@@ -9,6 +9,8 @@ public class playerController : MonoBehaviour
     public bool playerCaught;
     public GameObject GameOverScene;
     public Animator animator;
+    public float speedDur = 5f;
+    public float invisibleDur = 5f;
 
     Vector2 movement;
 
@@ -16,11 +18,14 @@ public class playerController : MonoBehaviour
     {
         gameObject.layer = 6;
         playerCaught = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        speedDur = PlayerPrefs.GetInt("speedDur");
+        invisibleDur = PlayerPrefs.GetInt("invisibleDur");
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
@@ -59,27 +64,27 @@ public class playerController : MonoBehaviour
         if (collision.gameObject.tag == "SpeedBoost")
         {
             Debug.Log("touch SpeedBoost");
-            StartCoroutine(WaitSpeedBoost());
+            StartCoroutine(WaitSpeedBoost(speedDur));
         }
 
         if (collision.gameObject.tag == "InvisibleBoost")
         {
             Debug.Log("touch InvisibleBoost");
-            StartCoroutine(WaitInvisibleBoost());
+            StartCoroutine(WaitInvisibleBoost(invisibleDur));
         }
     }
 
-    public IEnumerator WaitSpeedBoost()
+    public IEnumerator WaitSpeedBoost(float dur)
     {
         moveSpeed = moveSpeed * 2;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(dur);
         moveSpeed = moveSpeed / 2;
     }
 
-    public IEnumerator WaitInvisibleBoost()
+    public IEnumerator WaitInvisibleBoost(float dur)
     {
         gameObject.layer = 8;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(dur);
         gameObject.layer = 6;
     }
 }

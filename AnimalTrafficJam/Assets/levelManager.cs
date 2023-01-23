@@ -51,16 +51,16 @@ public class levelManager : MonoBehaviour
             collectableStar.SetActive(false);
         }
 
-        if(currentLevel == 1){
+        if(currentLevel == 1 && star > PlayerPrefs.GetInt("level1Star")){
             PlayerPrefs.SetInt("level1Star", star);
             // Debug.Log("insertStar");
-        }else if(currentLevel == 2){
+        }else if(currentLevel == 2 && star > PlayerPrefs.GetInt("level2Star")){
             PlayerPrefs.SetInt("level2Star", star);
-        }else if(currentLevel == 3){
+        }else if(currentLevel == 3 && star > PlayerPrefs.GetInt("level3Star")){
             PlayerPrefs.SetInt("level3Star", star);
-        }else if(currentLevel == 4){
+        }else if(currentLevel == 4 && star > PlayerPrefs.GetInt("level4Star")){
             PlayerPrefs.SetInt("level4Star", star);
-        }else if(currentLevel == 5){
+        }else if(currentLevel == 5 && star > PlayerPrefs.GetInt("level5Star")){
             PlayerPrefs.SetInt("level5Star", star);
         }
     }
