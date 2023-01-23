@@ -2440,6 +2440,7 @@ MonoBehaviour:
   firstStar: 0
   secondStar: 0
   thirdStar: 0
+  currentLevel: 5
 --- !u!4 &1511029963
 Transform:
   m_ObjectHideFlags: 0

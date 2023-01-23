@@ -16,6 +16,7 @@ public class levelManager : MonoBehaviour
     public bool firstStar;
     public bool secondStar;
     public bool thirdStar;
+    public int currentLevel;
 
     void Start()
     {   
@@ -48,6 +49,19 @@ public class levelManager : MonoBehaviour
             star += 1;
             thirdStar = true;
             collectableStar.SetActive(false);
+        }
+
+        if(currentLevel == 1){
+            PlayerPrefs.SetInt("level1Star", star);
+            // Debug.Log("insertStar");
+        }else if(currentLevel == 2){
+            PlayerPrefs.SetInt("level2Star", star);
+        }else if(currentLevel == 3){
+            PlayerPrefs.SetInt("level3Star", star);
+        }else if(currentLevel == 4){
+            PlayerPrefs.SetInt("level4Star", star);
+        }else if(currentLevel == 5){
+            PlayerPrefs.SetInt("level5Star", star);
         }
     }
 
