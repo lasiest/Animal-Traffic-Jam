@@ -4157,11 +4157,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Star: {fileID: 1838955327}
   level1Star: 0
+  level1Star_1star: {fileID: 481723828}
+  level1Star_2star: {fileID: 1043702233}
+  level1Star_3star: {fileID: 923087289}
   level2Star: 0
+  level2Star_1star: {fileID: 245774606}
+  level2Star_2star: {fileID: 373331754}
+  level2Star_3star: {fileID: 640357173}
   level3Star: 0
+  level3Star_1star: {fileID: 2110791493}
+  level3Star_2star: {fileID: 430035774}
+  level3Star_3star: {fileID: 523594498}
   level4Star: 0
+  level4Star_1star: {fileID: 1170649589}
+  level4Star_2star: {fileID: 1851389280}
+  level4Star_3star: {fileID: 566006403}
   level5Star: 0
+  level5Star_1star: {fileID: 1755413758}
+  level5Star_2star: {fileID: 1861163387}
+  level5Star_3star: {fileID: 1591909747}
   totalStar: 0
+  starReduction: 0
+  speedUpgraded: 0
+  invisibleUpgraded: 0
 --- !u!114 &1669930368
 MonoBehaviour:
   m_ObjectHideFlags: 0
