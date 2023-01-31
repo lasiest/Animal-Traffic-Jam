@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Selection.unity
     guid: ed0e7e0ef09a8f14caaa839c24bdd028
   - enabled: 1
+    path: Assets/Scenes/Encyclopedia.unity
+    guid: aa5f1972f64ceb740aab42be6b2ce56f
+  - enabled: 1
+    path: Assets/Scenes/EncyExplain.unity
+    guid: 0bc5d7c98912cfd4781e6c81ebb6704b
+  - enabled: 1
+    path: Assets/Scenes/EncyExplain2.unity
+    guid: 03043ce20ab475f408ed8434586ce825
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 5cc108d9444f62d46a8a5ba6740114b6
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 87ce2f0958ac4804baaa1378b3d0550b
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 47d75fdd04fe62c458fc583469cb5a19

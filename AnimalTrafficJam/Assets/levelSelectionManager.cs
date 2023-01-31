@@ -109,6 +109,31 @@ public class levelSelectionManager : MonoBehaviour
         SceneManager.LoadScene("Main menu");
     }
 
+    public void Encyclopedia()
+    {
+        SceneManager.LoadScene("Encyclopedia");
+    }
+
+    public void EncyExplain()
+    {
+        SceneManager.LoadScene("EncyExplain");
+    }
+
+    public void EncyExplain2()
+    {
+        SceneManager.LoadScene("EncyExplain2");
+    }
+
+    public void Setting()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     private void AssignStar(){
         level1Star_1star.SetActive(false);
         level1Star_2star.SetActive(false);
