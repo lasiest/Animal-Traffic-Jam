@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 2402416385760654885, guid: 6666a708b8a95a94c8f8f1cd3b0b90dd, type: 3}
+  Collect: {fileID: 8300000, guid: 0e241d962470d474c9e756e100852671, type: 3}
 --- !u!58 &7560912356916522489
 CircleCollider2D:
   m_ObjectHideFlags: 0

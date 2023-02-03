@@ -155,6 +155,7 @@ MonoBehaviour:
   first_StopDirection: 180
   last_WalkDirection: -90
   last_StopDirection: 180
+  enemyWalk: {fileID: 8300000, guid: 9854b0dce097c464683b53d4acebe035, type: 3}
 --- !u!1 &2627487601136173625
 GameObject:
   m_ObjectHideFlags: 0

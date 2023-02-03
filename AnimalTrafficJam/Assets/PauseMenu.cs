@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    [SerializeField]  private AudioClip Click;
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +22,7 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
+                ClickSound();
                 Pause();
             }
         }
@@ -28,6 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        ClickSound();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -35,6 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        ClickSound();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -42,12 +46,19 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        ClickSound();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main menu");
     }
 
     public void QuitGame()
     {
+        ClickSound();
         Application.Quit();
+    }
+
+    public void ClickSound()
+    {
+        SoundManager.instance.PlaySound(Click);
     }
 }

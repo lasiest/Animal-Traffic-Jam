@@ -11,6 +11,8 @@ public class playerController : MonoBehaviour
     public Animator animator;
     public float speedDur = 5f;
     public float invisibleDur = 5f;
+    [SerializeField] private AudioClip CollectInvis;
+    [SerializeField] private AudioClip CollectSpeed;
 
     Vector2 movement;
 
@@ -77,6 +79,7 @@ public class playerController : MonoBehaviour
     public IEnumerator WaitSpeedBoost(float dur)
     {
         moveSpeed = moveSpeed * 2;
+        SoundManager.instance.PlaySound(CollectSpeed);
         yield return new WaitForSeconds(dur);
         moveSpeed = moveSpeed / 2;
     }
@@ -84,6 +87,7 @@ public class playerController : MonoBehaviour
     public IEnumerator WaitInvisibleBoost(float dur)
     {
         gameObject.layer = 8;
+        SoundManager.instance.PlaySound(CollectInvis);
         yield return new WaitForSeconds(dur);
         gameObject.layer = 6;
     }

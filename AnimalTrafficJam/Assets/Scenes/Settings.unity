@@ -412,6 +412,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3545697909932629183}
         m_TargetAssemblyTypeName: levelSelectionManager, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3545697909932629183}
+        m_TargetAssemblyTypeName: levelSelectionManager, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -814,6 +826,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2100040569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486496, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847658898437486499, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 837886b9c7c39cd468bcd613a2342405, type: 3}
 --- !u!1 &3545697909633771786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1218,7 @@ MonoBehaviour:
   Star: {fileID: 0}
   InvisibleUpgradeText: {fileID: 0}
   speedUpgradeText: {fileID: 0}
+  Click: {fileID: 8300000, guid: 60df090b48792be48a358438a122e7f2, type: 3}
   level1Star: 0
   level1Star_1star: {fileID: 0}
   level1Star_2star: {fileID: 0}

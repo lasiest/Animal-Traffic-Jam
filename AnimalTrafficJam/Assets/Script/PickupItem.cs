@@ -6,6 +6,7 @@ public class PickupItem : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
+    [SerializeField] private AudioClip Collect;
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -22,6 +23,7 @@ public class PickupItem : MonoBehaviour
                     {
                         inventory.keycount++;
                     }
+                    SoundManager.instance.PlaySound(Collect);
                     Instantiate(itemButton, inventory.slots[i].transform,false);
                     Destroy(gameObject);
                     break;

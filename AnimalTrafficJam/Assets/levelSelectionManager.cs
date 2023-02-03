@@ -10,6 +10,7 @@ public class levelSelectionManager : MonoBehaviour
     public TextMeshProUGUI Star;
     public TextMeshProUGUI InvisibleUpgradeText;
     public TextMeshProUGUI speedUpgradeText;
+    [SerializeField] private AudioClip Click;
 
     public int level1Star;
     public GameObject level1Star_1star;
@@ -141,6 +142,10 @@ public class levelSelectionManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void ClickSound()
+    {
+        SoundManager.instance.PlaySound(Click);
+    }
     private void AssignStar(){
         level1Star_1star.SetActive(false);
         level1Star_2star.SetActive(false);
