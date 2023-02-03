@@ -49,7 +49,12 @@ public class levelSelectionManager : MonoBehaviour
         invisibleUpgraded = PlayerPrefs.GetInt("invisibleUpgraded");
         starReduction = PlayerPrefs.GetInt("StarReduction");
         AssignStar();
-       
+       if(speedUpgraded == 0){
+        PlayerPrefs.SetInt("speedDur", 5);
+       }
+       if(invisibleUpgraded == 0){
+        PlayerPrefs.SetInt("invisibleDur", 5);
+       }
     }
 
     private void Update() {
@@ -107,6 +112,8 @@ public class levelSelectionManager : MonoBehaviour
 
     public void LevelSelection(){
         SceneManager.LoadScene("Level Selection");
+        //Delete Player Prefs
+        PlayerPrefs.DeleteAll();
     }
 
     public void Shop(){

@@ -9,8 +9,8 @@ public class playerController : MonoBehaviour
     public bool playerCaught;
     public GameObject GameOverScene;
     public Animator animator;
-    public float speedDur = 5f;
-    public float invisibleDur = 5f;
+    public int speedDur = 0;
+    public int invisibleDur = 0;
     [SerializeField] private AudioClip CollectInvis;
     [SerializeField] private AudioClip CollectSpeed;
 
@@ -20,7 +20,12 @@ public class playerController : MonoBehaviour
     {
         gameObject.layer = 6;
         playerCaught = false;
-        
+        if(PlayerPrefs.GetInt("speedDur") == 0f){
+            PlayerPrefs.SetInt("speedDur", 5);
+        }
+        if(PlayerPrefs.GetInt("invisibleDUr") == 0f){
+            PlayerPrefs.SetInt("invisibleDur", 5);
+        }
     }
 
     // Update is called once per frame
