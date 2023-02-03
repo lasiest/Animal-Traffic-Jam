@@ -17,12 +17,18 @@ public class levelManager : MonoBehaviour
     public bool secondStar;
     public bool thirdStar;
     public int currentLevel;
+    public GameObject one_Star_InGame;
+    public GameObject two_Star_InGame;
+    public GameObject three_Star_InGame;
 
     void Start()
     {   
         star = 0;
         firstStar = false;
         levelFinishedScene.SetActive(false);
+        one_Star_InGame.SetActive(false);
+        two_Star_InGame.SetActive(false);
+        three_Star_InGame.SetActive(false);
     }
 
     void Update()
@@ -44,11 +50,21 @@ public class levelManager : MonoBehaviour
         if(player.GetComponent<Inventory>().isFull[maxAnimal] && secondStar == false){
             star += 1;
             secondStar = true;
+
         }
         if(collectableStar.GetComponent<collectableStar>().starCollected && thirdStar == false){
             star += 1;
             thirdStar = true;
             collectableStar.SetActive(false);
+
+        }
+        
+        if(star == 1){
+            one_Star_InGame.SetActive(true);
+        }else if(star == 2){
+            two_Star_InGame.SetActive(true);            
+        }else if(star == 3){
+            three_Star_InGame.SetActive(true);            
         }
 
         if(currentLevel == 1 && star > PlayerPrefs.GetInt("level1Star")){
