@@ -8,6 +8,8 @@ public class levelSelectionManager : MonoBehaviour
 {   
 
     public TextMeshProUGUI Star;
+    public TextMeshProUGUI InvisibleUpgradeText;
+    public TextMeshProUGUI speedUpgradeText;
 
     public int level1Star;
     public GameObject level1Star_1star;
@@ -52,7 +54,12 @@ public class levelSelectionManager : MonoBehaviour
     private void Update() {
         totalStar = level1Star + level2Star + level3Star + level4Star + level5Star - starReduction;
         Star.text = totalStar.ToString();
-
+        if(PlayerPrefs.GetInt("speedUpgraded") == 1){
+            speedUpgradeText.text = "Maxed Upgraded";
+        }
+        if(PlayerPrefs.GetInt("invisibleUpgraded") == 1){
+            InvisibleUpgradeText.text = "Maxed Upgraded";
+        }
     }
 
     public void upgradeSpeedDur(){
