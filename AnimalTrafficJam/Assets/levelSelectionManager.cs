@@ -73,7 +73,8 @@ public class levelSelectionManager : MonoBehaviour
             starReduction = starReduction + 5;
             PlayerPrefs.SetInt("StarReduction", starReduction);
             PlayerPrefs.SetInt("speedDur", 7);
-            PlayerPrefs.SetInt("speedUpgraded", 1);            
+            PlayerPrefs.SetInt("speedUpgraded", 1);
+            speedUpgradeText.text = "Maxed Upgraded";            
         }
     }
 
@@ -83,6 +84,7 @@ public class levelSelectionManager : MonoBehaviour
             PlayerPrefs.SetInt("StarReduction", starReduction);
             PlayerPrefs.SetInt("invisibleDur", 7);
             PlayerPrefs.SetInt("InvisibleUpgraded", 1);
+            InvisibleUpgradeText.text = "Maxed Upgraded";
         }
     }
 
@@ -113,7 +115,7 @@ public class levelSelectionManager : MonoBehaviour
     public void LevelSelection(){
         SceneManager.LoadScene("Level Selection");
         //Delete Player Prefs
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
     }
 
     public void Shop(){
