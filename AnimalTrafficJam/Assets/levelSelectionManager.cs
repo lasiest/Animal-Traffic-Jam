@@ -156,54 +156,130 @@ public class levelSelectionManager : MonoBehaviour
         SoundManager.instance.PlaySound(Click);
     }
     private void AssignStar(){
-        level1Star_1star.SetActive(false);
-        level1Star_2star.SetActive(false);
-        level1Star_3star.SetActive(false);
-        level2Star_1star.SetActive(false);
-        level2Star_2star.SetActive(false);
-        level2Star_3star.SetActive(false);
-        level3Star_1star.SetActive(false);
-        level3Star_2star.SetActive(false);
-        level3Star_3star.SetActive(false);
-        level4Star_1star.SetActive(false);
-        level4Star_2star.SetActive(false);
-        level4Star_3star.SetActive(false);
-        level5Star_1star.SetActive(false);
-        level5Star_2star.SetActive(false);
-        level5Star_3star.SetActive(false);
-        if(level1Star == 1){
+        if (level1Star_1star != null)
+        {
+            level1Star_1star.SetActive(false);
+        }
+
+        if (level1Star_2star != null)
+        {
+            level1Star_2star.SetActive(false);
+        }
+
+        if (level1Star_3star != null)
+        {
+            level1Star_3star.SetActive(false);
+        }
+
+        if (level2Star_1star != null)
+        {
+            level2Star_1star.SetActive(false);
+        }
+
+        if (level2Star_2star != null)
+        {
+            level2Star_2star.SetActive(false);
+        }
+
+        if (level2Star_3star != null)
+        {
+            level2Star_3star.SetActive(false);
+        }
+
+        if (level3Star_1star != null)
+        {
+            level3Star_1star.SetActive(false);
+        }
+
+        if (level3Star_2star != null)
+        {
+            level3Star_2star.SetActive(false);
+        }
+
+        if (level3Star_3star != null)
+        {
+            level3Star_3star.SetActive(false);
+        }
+
+        if (level4Star_1star != null)
+        {
+            level4Star_1star.SetActive(false);
+        }
+
+        if (level4Star_2star != null)
+        {
+            level4Star_2star.SetActive(false);
+        }
+
+        if (level4Star_3star != null)
+        {
+            level4Star_3star.SetActive(false);
+        }
+
+        if (level5Star_1star != null)
+        {
+            level5Star_1star.SetActive(false);
+        }
+
+        if (level5Star_2star != null)
+        {
+            level5Star_2star.SetActive(false);
+        }
+
+        if (level5Star_3star != null)
+        {
+            level5Star_3star.SetActive(false);
+        }
+
+        if(level1Star == 1 && level1Star_1star != null)
+        {
             level1Star_1star.SetActive(true);
-        }else if(level1Star == 2){
+        }else if(level1Star == 2 && level1Star_2star != null)
+        {
             level1Star_2star.SetActive(true);
-        }else if(level1Star == 3){
+        }else if(level1Star == 3 && level1Star_3star != null)
+        {
             level1Star_3star.SetActive(true);
         }
-        if(level2Star == 1){
+
+        if(level2Star == 1 && level2Star_1star != null)
+        {
             level2Star_1star.SetActive(true);
-        }else if(level2Star == 2){
+        }else if(level2Star == 2 && level2Star_2star != null)
+        {
             level2Star_2star.SetActive(true);
-        }else if(level2Star == 3){
+        }else if(level2Star == 3 && level2Star_3star != null)
+        {
             level2Star_3star.SetActive(true);
         }
-        if(level3Star == 1){
+        if(level3Star == 1 && level3Star_1star != null)
+        {
             level3Star_1star.SetActive(true);
-        }else if(level3Star == 2){
+        }else if(level3Star == 2 && level3Star_2star != null)
+        {
             level3Star_2star.SetActive(true);
-        }else if(level3Star == 3){
+        }else if(level3Star == 3 && level3Star_3star != null)
+        {
             level3Star_3star.SetActive(true);
         }
-        if(level4Star == 1){
+        if(level4Star == 1 && level4Star_1star != null)
+        {
             level4Star_1star.SetActive(true);
-        }else if(level4Star == 2){
+        }else if(level4Star == 2 && level4Star_2star != null)
+        {
             level4Star_2star.SetActive(true);
-        }else if(level4Star == 3){
+        }else if(level4Star == 3 && level4Star_3star != null)
+        {
             level4Star_3star.SetActive(true);
         }
-        if(level5Star == 1){
+        if(level5Star == 1 && level5Star_1star != null)
+        {
             level5Star_1star.SetActive(true);
-        }else if(level5Star == 2){
+        }else if(level5Star == 2 && level5Star_2star != null)
+        {
             level5Star_2star.SetActive(true);
-        }else if(level5Star == 3){
+        }else if(level5Star == 3 && level5Star_3star != null)
+        {
             level5Star_3star.SetActive(true);
         }         
     }
