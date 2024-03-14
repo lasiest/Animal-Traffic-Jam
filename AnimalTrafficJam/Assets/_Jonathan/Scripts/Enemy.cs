@@ -34,8 +34,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        fovManager.SetOrigin(transform.position);
-
         if (startPoint != null && endPoint != null)
         {
             targetPosition = startPoint.position;
@@ -59,6 +57,8 @@ public class Enemy : MonoBehaviour
 
             fovManager.SetStartingAngle(startAngle);
         }
+
+        fovManager.SetOrigin(transform.position);
     }
 
     private void Update()

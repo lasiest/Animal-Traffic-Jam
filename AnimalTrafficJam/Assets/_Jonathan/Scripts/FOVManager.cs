@@ -27,7 +27,6 @@ public class FOVManager : MonoBehaviour
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        origin = Vector3.zero;
     }
 
     private void SetFOVMesh()
