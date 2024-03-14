@@ -5,11 +5,12 @@ using UnityEngine;
 public class FOVManager : MonoBehaviour
 {
     [SerializeField] private LayerMask playerLayerMask;
+    [SerializeField] private float fovRadius = 90f;
+    [SerializeField] private float viewDistance = 10f;
+
     private Mesh mesh;
-    private float fov;
     private Vector3 origin;
     private float startingAngle;
-    private float viewDistance;
 
     private void Start()
     {
@@ -26,15 +27,13 @@ public class FOVManager : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         origin = Vector3.zero;
-        fov = 90f;
-        viewDistance = 10f;
     }
 
     private void SetFOVMesh()
     {
         int rayCount = 50;
         float currentAngle = startingAngle;
-        float angleIncrease = fov / rayCount;
+        float angleIncrease = fovRadius / rayCount;
 
         // segitiga
         Vector3[] vertices = new Vector3[rayCount + 1 + 1];
@@ -94,7 +93,7 @@ public class FOVManager : MonoBehaviour
         return new Vector3(Mathf.Cos(angleRadius), Mathf.Sin(angleRadius));
     }
 
-    private float GetAngleFromVector(Vector3 direction)
+    public float GetAngleFromVector(Vector3 direction)
     {
         direction = direction.normalized;
         float temp = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -114,7 +113,17 @@ public class FOVManager : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {      
-        startingAngle = GetAngleFromVector(direction) + fov / 2f;
+        startingAngle = GetAngleFromVector(direction) + fovRadius / 2f;
+    }
+
+    public void SetDirectionSmoothly(float rotateSpeed)
+    {
+        startingAngle += Time.deltaTime * rotateSpeed;
+    }
+
+    public float GetStartingAngle()
+    {
+        return startingAngle;
     }
 
     public void SetStartingAngle(float angle)
