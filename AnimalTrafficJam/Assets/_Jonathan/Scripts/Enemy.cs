@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public Transform fovIdlePoint;
 
     [Header("Fill this if you want to rotate FOV")]
-    public Transform targetRotation;    
+    public float targetAngle;    
 
     private Vector3 targetPosition;
 
@@ -30,11 +30,12 @@ public class Enemy : MonoBehaviour
     private float endAngle;
     
     private bool isMoving = true;
-    private bool isRotatingTowardsTarget = true;
     private bool isReversing = false;
 
     private void Start()
     {
+        fovManager.SetOrigin(transform.position);
+
         if (startPoint != null && endPoint != null)
         {
             targetPosition = startPoint.position;
@@ -46,15 +47,17 @@ public class Enemy : MonoBehaviour
             Vector3 lookDirection = targetPosition - transform.position;
             RotateFOV(lookDirection);
         }
-        else
+        else if(targetPosition == null && targetAngle == 0)
         {
             fovManager.SetStartingAngle(initialStartingAngle);
         }
 
-        if (targetRotation != null)
+        if (targetAngle != 0)
         {
-            startAngle = fovManager.GetStartingAngle();
-            endAngle = fovManager.GetAngleFromVector(targetRotation.position - transform.position);
+            startAngle = initialStartingAngle;
+            endAngle = targetAngle;
+
+            fovManager.SetStartingAngle(startAngle);
         }
     }
 
@@ -88,18 +91,31 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (targetRotation != null)
+        if (targetAngle != 0)
         {
-            if (isRotatingTowardsTarget)
-            {
-                RotateFOVSmoothly(fovRotateSpeed);
+            RotateFOVSmoothly(fovRotateSpeed);
 
+            if (targetAngle >= 0)
+            {
                 if (fovManager.GetStartingAngle() >= endAngle && !isReversing)
                 {
                     isReversing = true;
                     fovRotateSpeed *= -1;
                 }
                 else if (fovManager.GetStartingAngle() <= startAngle && isReversing)
+                {
+                    isReversing = false;
+                    fovRotateSpeed *= -1;
+                }
+            }
+            else
+            {
+                if (fovManager.GetStartingAngle() <= endAngle && !isReversing)
+                {
+                    isReversing = true;
+                    fovRotateSpeed *= -1;
+                }
+                else if (fovManager.GetStartingAngle() >= startAngle && isReversing)
                 {
                     isReversing = false;
                     fovRotateSpeed *= -1;

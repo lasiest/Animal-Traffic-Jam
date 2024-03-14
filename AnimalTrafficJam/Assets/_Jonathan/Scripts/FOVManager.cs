@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FOVManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask playerLayerMask;
+    [SerializeField] private playerController playerController;
+    [SerializeField] private LayerMask layerMask;
     [SerializeField] private float fovRadius = 90f;
     [SerializeField] private float viewDistance = 10f;
 
@@ -48,7 +49,7 @@ public class FOVManager : MonoBehaviour
         {
             Vector3 vertex;
 
-            RaycastHit2D raycastHit2d = Physics2D.Raycast(origin, GetVectorFromAngle(currentAngle), viewDistance);
+            RaycastHit2D raycastHit2d = Physics2D.Raycast(origin, GetVectorFromAngle(currentAngle), viewDistance, layerMask);
 
             if (raycastHit2d.collider == null)
             {
@@ -56,15 +57,11 @@ public class FOVManager : MonoBehaviour
             }
             else
             {
-                if (raycastHit2d.collider.CompareTag("Player"))
+                if (raycastHit2d.collider.gameObject.CompareTag("Player"))
                 {
-                    Debug.Log("Player Detected!");
-                    vertex = origin + GetVectorFromAngle(currentAngle) * viewDistance;
+                    playerController.playerCaught = true;
                 }
-                else
-                {
-                    vertex = raycastHit2d.point;
-                }
+                vertex = raycastHit2d.point;
             }            
 
             vertices[vertexIndex] = vertex;
