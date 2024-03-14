@@ -120,14 +120,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fovManager: {fileID: 5302760021151804680}
   animator: {fileID: 4938543867216703213}
+  initialStartingAngle: 0
   speed: 2
   fovRotateSpeed: 2
   delayWalkTime: 2
+  delayRotateTime: 2
   startPoint: {fileID: 0}
   endPoint: {fileID: 0}
   fovIdlePoint: {fileID: 0}
-  startRotationPoint: {fileID: 0}
-  endRotationPoint: {fileID: 0}
+  targetAngle: 0
 --- !u!1 &4761507764739520692
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,9 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83a9e42c92710a4f9628cfa6345af64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayerMask:
+  playerController: {fileID: 0}
+  layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   fovRadius: 90
   viewDistance: 10
 --- !u!1 &7587629762075615470

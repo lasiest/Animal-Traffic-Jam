@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private FOVManager fovManager;
+    public FOVManager fovManager;
     [SerializeField] private Animator animator;
 
     [Header("Enemy Stats")]
@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour
     public Transform endPoint;
 
     [Header("Fill this if you want to rotate FOV after the enemy stopped walking")]
-    public Transform fovIdlePoint;
+    public Transform startPointFovIdlePoint;
+    public Transform endPointFovIdlePoint;
 
     [Header("Fill this if you want to rotate FOV")]
     public float targetAngle;    
@@ -37,15 +38,15 @@ public class Enemy : MonoBehaviour
         if (startPoint != null && endPoint != null)
         {
             targetPosition = startPoint.position;
-            RotateTowards(targetPosition);            
+            RotateTowards(targetPosition);
         }
 
-        if (targetPosition != null)
+        if (!Equals(targetPosition, new Vector3(0f, 0f, 0f)))
         {
             Vector3 lookDirection = targetPosition - transform.position;
             RotateFOV(lookDirection);
         }
-        else if(targetPosition == null && targetAngle == 0)
+        else
         {
             fovManager.SetStartingAngle(initialStartingAngle);
         }
@@ -56,6 +57,10 @@ public class Enemy : MonoBehaviour
             endAngle = targetAngle;
 
             fovManager.SetStartingAngle(startAngle);
+        }
+        else
+        {
+            fovManager.SetStartingAngle(initialStartingAngle);
         }
 
         fovManager.SetOrigin(transform.position);
@@ -75,12 +80,34 @@ public class Enemy : MonoBehaviour
 
                 if (transform.position == targetPosition)
                 {
+                    // Kalau enemy sudah sampai ke end point
                     if (targetPosition == endPoint.position)
                     {
-                        if (fovIdlePoint != null)
+                        if (startPointFovIdlePoint != null)
                         {
-                            Vector3 fovLookDirection = (fovIdlePoint.position - transform.position).normalized;
+                            Vector3 fovLookDirection = (startPointFovIdlePoint.position - transform.position).normalized;
+
                             RotateFOV(fovLookDirection);
+
+                            if (fovManager.GetAngleFromVector(fovLookDirection) > 90)
+                            {
+                                transform.rotation = Quaternion.Euler(0, 180, 0);
+                            }
+                        }
+                    }
+
+                    // Kalau enemy sudah balik lagi ke start point
+                    else if (targetPosition == startPoint.position)
+                    {
+                        if (endPointFovIdlePoint != null)
+                        {
+                            Vector3 fovLookDirection = (endPointFovIdlePoint.position - transform.position).normalized;
+                            RotateFOV(fovLookDirection);
+
+                            if (fovManager.GetAngleFromVector(fovLookDirection) > 90)
+                            {
+                                transform.rotation = Quaternion.Euler(0, 180, 0);
+                            }
                         }
                     }
 
@@ -95,6 +122,7 @@ public class Enemy : MonoBehaviour
         {
             RotateFOVSmoothly(fovRotateSpeed);
 
+            // startAngle harus lebih kecil dari endAngle
             if (targetAngle >= 0)
             {
                 if (fovManager.GetStartingAngle() >= endAngle && !isReversing)
@@ -108,6 +136,8 @@ public class Enemy : MonoBehaviour
                     fovRotateSpeed *= -1;
                 }
             }
+            
+            // startAngle harus lebih besar dari endAngle
             else
             {
                 if (fovManager.GetStartingAngle() <= endAngle && !isReversing)
@@ -128,15 +158,35 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(delayWalkTime);
 
+        Debug.Log(gameObject.name + " changing target");
+
         if (targetPosition == startPoint.position)
         {
             targetPosition = endPoint.position;
-            RotateTowards(targetPosition);
+
+            Vector3 direction = (targetPosition - startPoint.position).normalized;
+            if (direction.y == 0)
+            {
+                RotateTowards(targetPosition);
+            }
+            else
+            {
+                RotateFOV(direction);
+            }
         }
         else
         {
             targetPosition = startPoint.position;
-            RotateTowards(targetPosition);
+
+            Vector3 direction = (targetPosition - endPoint.position).normalized;
+            if (direction.y == 0)
+            {
+                RotateTowards(targetPosition);
+            }
+            else
+            {
+                RotateFOV(direction);
+            }
         }
 
         isMoving = true;

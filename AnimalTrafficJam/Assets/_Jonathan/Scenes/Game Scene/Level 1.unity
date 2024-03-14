@@ -21257,12 +21257,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7045620410490716994, guid: 51e5618e0883b8b498a6b5b6c4bab57e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.50724
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045620410490716994, guid: 51e5618e0883b8b498a6b5b6c4bab57e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.5586
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045620410490716994, guid: 51e5618e0883b8b498a6b5b6c4bab57e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.7793
       objectReference: {fileID: 0}
     - target: {fileID: 7045620410490716994, guid: 51e5618e0883b8b498a6b5b6c4bab57e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17
+      value: 0.3236
       objectReference: {fileID: 0}
     - target: {fileID: 7045620410490716994, guid: 51e5618e0883b8b498a6b5b6c4bab57e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21359,7 +21367,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.1925354}
+  m_Size: {x: 0.638098, y: 1.1925354}
   m_EdgeRadius: 0
 --- !u!50 &1118062692138139779
 Rigidbody2D:
@@ -21382,22 +21390,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1118062692138139782
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118062692138139838}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.74
 --- !u!212 &1118062692138139836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21480,7 +21472,7 @@ GameObject:
   - component: {fileID: 1118062692138139779}
   - component: {fileID: 1118062692138139778}
   - component: {fileID: 1118062692138139776}
-  - component: {fileID: 1118062692138139782}
+  - component: {fileID: 1118062692138139840}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -21509,6 +21501,22 @@ MonoBehaviour:
   invisibleDur: 5
   CollectInvis: {fileID: 8300000, guid: 9af05bdd18307bf41a3f3d7e20901dae, type: 3}
   CollectSpeed: {fileID: 8300000, guid: 270128537d99f5e449a2c031366cc6fb, type: 3}
+--- !u!70 &1118062692138139840
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118062692138139838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.055000544}
+  m_Size: {x: 0.7817948, y: 1.6139917}
+  m_Direction: 0
 --- !u!1001 &8847658899381645339
 PrefabInstance:
   m_ObjectHideFlags: 0
