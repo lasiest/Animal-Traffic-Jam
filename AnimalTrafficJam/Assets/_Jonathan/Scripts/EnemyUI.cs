@@ -19,7 +19,7 @@ public class EnemyUI : MonoBehaviour
             case 1:
                 if (enemy.targetAngle < 0)
                 {
-                    if (IsLessThan(enemy.fovManager.GetStartingAngle(), thresholds[^2]))
+                    if (IsLessThan(enemy.fovManager.GetStartingAngle(), thresholds[^1]))
                     {
                         enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
                     }

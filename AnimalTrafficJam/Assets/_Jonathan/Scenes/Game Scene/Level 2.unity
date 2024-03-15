@@ -999,6 +999,10 @@ PrefabInstance:
       propertyPath: delayWalkTime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 237859070519430481, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
+      propertyPath: initialStartingAngle
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3809404041104198590, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.85
@@ -1260,7 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e300214e41ff34cb3716d0a7fa7a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8216526654077160332}
+  player: {fileID: 0}
 --- !u!114 &770387041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3396,11 +3400,11 @@ PrefabInstance:
     - target: {fileID: 237859070519430481, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: endPointFovIdlePoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1540151324}
     - target: {fileID: 237859070519430481, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: startPointFovIdlePoint
       value: 
-      objectReference: {fileID: 1540151324}
+      objectReference: {fileID: 0}
     - target: {fileID: 3809404041104198590, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.228
@@ -3443,7 +3447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587629762075615470, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_Name
-      value: Start Point FOV Idle Point
+      value: End Point FOV Idle Point
       objectReference: {fileID: 0}
     - target: {fileID: 8366669238457226137, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_RootOrder
@@ -3495,7 +3499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8366669239095583223, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.228
+      value: -7.752
       objectReference: {fileID: 0}
     - target: {fileID: 8366669239095583223, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3503,7 +3507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8366669239359632421, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.752
+      value: 1.228
       objectReference: {fileID: 0}
     - target: {fileID: 8366669239359632421, guid: f13a196dcfb450149afb79b286682dd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25490,7 +25494,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.020198107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25501,7 +25505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.646013, y: 1.1827036}
+  m_Size: {x: 0.42366338, y: 1.2519665}
   m_EdgeRadius: 0
 --- !u!50 &8216526654077160369
 Rigidbody2D:
@@ -25576,7 +25580,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.055000544}
-  m_Size: {x: 0.7817948, y: 1.6139917}
+  m_Size: {x: 0.6737793, y: 1.6139917}
   m_Direction: 0
 --- !u!224 &8895798330125399464
 RectTransform:
