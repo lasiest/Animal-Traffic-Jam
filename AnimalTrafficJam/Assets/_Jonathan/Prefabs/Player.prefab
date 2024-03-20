@@ -109,6 +109,7 @@ MonoBehaviour:
   animator: {fileID: 2339606444741049529}
   speedDur: 5
   invisibleDur: 5
+  invisibleMaterial: {fileID: 2100000, guid: b8afa328e5b494e47b970f8519849352, type: 2}
   CollectInvis: {fileID: 8300000, guid: 9af05bdd18307bf41a3f3d7e20901dae, type: 3}
   CollectSpeed: {fileID: 8300000, guid: 270128537d99f5e449a2c031366cc6fb, type: 3}
 --- !u!95 &2339606444741049529

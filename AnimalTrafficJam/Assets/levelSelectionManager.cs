@@ -12,22 +12,31 @@ public class levelSelectionManager : MonoBehaviour
     public TextMeshProUGUI speedUpgradeText;
     [SerializeField] private AudioClip Click;
 
+    [Header("Level 1")]
     public int level1Star;
     public GameObject level1Star_1star;
     public GameObject level1Star_2star;
     public GameObject level1Star_3star;
+
+    [Header("Level 2")]
     public int level2Star;
     public GameObject level2Star_1star;
     public GameObject level2Star_2star;
     public GameObject level2Star_3star;
+
+    [Header("Level 3")]
     public int level3Star;
     public GameObject level3Star_1star;
     public GameObject level3Star_2star;
     public GameObject level3Star_3star;
+
+    [Header("Level 4")]
     public int level4Star;
     public GameObject level4Star_1star;
     public GameObject level4Star_2star;
     public GameObject level4Star_3star;
+
+    [Header("Level 5")]
     public int level5Star;
     public GameObject level5Star_1star;
     public GameObject level5Star_2star;
@@ -59,7 +68,12 @@ public class levelSelectionManager : MonoBehaviour
 
     private void Update() {
         totalStar = level1Star + level2Star + level3Star + level4Star + level5Star - starReduction;
-        Star.text = totalStar.ToString();
+
+        if (Star != null)
+        {
+            Star.text = totalStar.ToString();
+        }
+
         if(PlayerPrefs.GetInt("speedUpgraded") == 1){
             speedUpgradeText.text = "Maxed Upgraded";
         }
@@ -70,7 +84,7 @@ public class levelSelectionManager : MonoBehaviour
 
     public void upgradeSpeedDur(){
         if(totalStar >= 5 && speedUpgraded != 1){
-            starReduction = starReduction + 5;
+            starReduction += 5;
             PlayerPrefs.SetInt("StarReduction", starReduction);
             PlayerPrefs.SetInt("speedDur", 7);
             PlayerPrefs.SetInt("speedUpgraded", 1);
@@ -80,7 +94,7 @@ public class levelSelectionManager : MonoBehaviour
 
     public void upgradeInvisibleDur(){
         if(totalStar >= 5 && invisibleUpgraded != 1){
-            starReduction  = starReduction + 5;
+            starReduction += 5;
             PlayerPrefs.SetInt("StarReduction", starReduction);
             PlayerPrefs.SetInt("invisibleDur", 7);
             PlayerPrefs.SetInt("InvisibleUpgraded", 1);

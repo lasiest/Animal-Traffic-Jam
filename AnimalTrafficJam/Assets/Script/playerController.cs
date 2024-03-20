@@ -9,23 +9,33 @@ public class playerController : MonoBehaviour
     public bool playerCaught;
     public GameObject GameOverScene;
     public Animator animator;
-    public int speedDur = 0;
-    public int invisibleDur = 0;
+    public int speedDur = 5;
+    public int invisibleDur = 5;
+    public Material invisibleMaterial;
     [SerializeField] private AudioClip CollectInvis;
     [SerializeField] private AudioClip CollectSpeed;
 
     Vector2 movement;
+    private Material defaultMaterial;
 
     void awake()
     {
         gameObject.layer = 6;
-        playerCaught = false;
-        if(PlayerPrefs.GetInt("speedDur") == 0f){
+        playerCaught = false;        
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("speedDur") == 0)
+        {
             PlayerPrefs.SetInt("speedDur", 5);
         }
-        if(PlayerPrefs.GetInt("invisibleDUr") == 0f){
+        if (PlayerPrefs.GetInt("invisibleDUr") == 0)
+        {
             PlayerPrefs.SetInt("invisibleDur", 5);
         }
+
+        defaultMaterial = gameObject.GetComponent<SpriteRenderer>().material;
     }
 
     // Update is called once per frame
@@ -91,9 +101,11 @@ public class playerController : MonoBehaviour
 
     public IEnumerator WaitInvisibleBoost(float dur)
     {
+        gameObject.GetComponent<SpriteRenderer>().material = invisibleMaterial;
         gameObject.layer = 8;
         SoundManager.instance.PlaySound(CollectInvis);
         yield return new WaitForSeconds(dur);
+        gameObject.GetComponent<SpriteRenderer>().material = defaultMaterial;
         gameObject.layer = 6;
     }
 }

@@ -81,6 +81,8 @@ public class FOVManager : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+
+        mesh.RecalculateBounds();
     }
 
     private Vector3 GetVectorFromAngle(float angle)
