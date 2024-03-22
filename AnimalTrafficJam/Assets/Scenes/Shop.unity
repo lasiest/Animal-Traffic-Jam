@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Upgrade (Cost: 6 Stars)'
+  m_text: 'Upgrade (Cost: 5 Stars)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Upgrade (Cost: 9 Stars)'
+  m_text: 'Upgrade (Cost: 5 Stars)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1611,6 +1611,7 @@ GameObject:
   - component: {fileID: 991548983}
   - component: {fileID: 991548982}
   - component: {fileID: 991548986}
+  - component: {fileID: 991548987}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1751,6 +1752,22 @@ MonoBehaviour:
   starReduction: 0
   speedUpgraded: 0
   invisibleUpgraded: 0
+--- !u!114 &991548987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991548981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a773890dcf1debf488e39675e6cd004c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeInvisibleButton: {fileID: 367334868}
+  upgradeInvisibleText: {fileID: 278403479}
+  upgradeSpeedButton: {fileID: 364632812}
+  upgradeSpeedText: {fileID: 456846832}
 --- !u!1 &1072783038
 GameObject:
   m_ObjectHideFlags: 0

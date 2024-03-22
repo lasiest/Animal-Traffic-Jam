@@ -55,15 +55,17 @@ public class levelSelectionManager : MonoBehaviour
         level4Star = PlayerPrefs.GetInt("level4Star");
         level5Star = PlayerPrefs.GetInt("level5Star");
         speedUpgraded = PlayerPrefs.GetInt("speedUpgraded");
-        invisibleUpgraded = PlayerPrefs.GetInt("invisibleUpgraded");
+        invisibleUpgraded = PlayerPrefs.GetInt("InvisibleUpgraded");
         starReduction = PlayerPrefs.GetInt("StarReduction");
+
         AssignStar();
-       if(speedUpgraded == 0){
-        PlayerPrefs.SetInt("speedDur", 5);
-       }
-       if(invisibleUpgraded == 0){
-        PlayerPrefs.SetInt("invisibleDur", 5);
-       }
+
+        if(speedUpgraded == 0){
+            PlayerPrefs.SetInt("speedDur", 5);
+        }
+        if(invisibleUpgraded == 0){
+            PlayerPrefs.SetInt("invisibleDur", 5);
+        }
     }
 
     private void Update() {
@@ -88,7 +90,9 @@ public class levelSelectionManager : MonoBehaviour
             PlayerPrefs.SetInt("StarReduction", starReduction);
             PlayerPrefs.SetInt("speedDur", 7);
             PlayerPrefs.SetInt("speedUpgraded", 1);
-            speedUpgradeText.text = "Maxed Upgraded";            
+            speedUpgradeText.text = "Maxed Upgraded";
+
+            Debug.Log("Speed Upgraded!");
         }
     }
 

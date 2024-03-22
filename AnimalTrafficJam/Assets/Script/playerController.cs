@@ -30,9 +30,18 @@ public class playerController : MonoBehaviour
         {
             PlayerPrefs.SetInt("speedDur", 5);
         }
+        else
+        {
+            speedDur = PlayerPrefs.GetInt("speedDur");
+        }
+
         if (PlayerPrefs.GetInt("invisibleDUr") == 0)
         {
             PlayerPrefs.SetInt("invisibleDur", 5);
+        }
+        else
+        {
+            invisibleDur = PlayerPrefs.GetInt("speedDur");
         }
 
         defaultMaterial = gameObject.GetComponent<SpriteRenderer>().material;
@@ -78,13 +87,13 @@ public class playerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "SpeedBoost")
+        if (collision.gameObject.CompareTag("SpeedBoost"))
         {
             Debug.Log("touch SpeedBoost");
             StartCoroutine(WaitSpeedBoost(speedDur));
         }
 
-        if (collision.gameObject.tag == "InvisibleBoost")
+        if (collision.gameObject.CompareTag("InvisibleBoost"))
         {
             Debug.Log("touch InvisibleBoost");
             StartCoroutine(WaitInvisibleBoost(invisibleDur));
@@ -93,10 +102,10 @@ public class playerController : MonoBehaviour
 
     public IEnumerator WaitSpeedBoost(float dur)
     {
-        moveSpeed = moveSpeed * 2;
+        moveSpeed *= 2;
         SoundManager.instance.PlaySound(CollectSpeed);
         yield return new WaitForSeconds(dur);
-        moveSpeed = moveSpeed / 2;
+        moveSpeed /= 2;
     }
 
     public IEnumerator WaitInvisibleBoost(float dur)
