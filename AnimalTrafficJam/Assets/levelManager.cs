@@ -90,7 +90,7 @@ public class levelManager : MonoBehaviour
             three_Star_InGame.SetActive(true);            
         }
 
-        if (!player.GetComponent<playerController>().GameOverScene.activeInHierarchy)
+        if (!player.GetComponent<playerController>().GameOverScene.activeInHierarchy && finishArea.GetComponent<finishArea>().reachFinishedArea)
         {
             if (currentLevel == 1 && star > PlayerPrefs.GetInt("level1Star"))
             {

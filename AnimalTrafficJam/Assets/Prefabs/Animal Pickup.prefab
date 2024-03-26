@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4118014344356169532}
   - component: {fileID: 4118014344356169535}
   - component: {fileID: 4118014344356169534}
+  - component: {fileID: 6143695467854946577}
   m_Layer: 0
   m_Name: Animal Pickup
   m_TagString: Untagged
@@ -116,3 +117,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 4851411861885103277, guid: 6e73448e7b697b64d82eaf0274c4ddb7, type: 3}
   Collect: {fileID: 8300000, guid: 0e241d962470d474c9e756e100852671, type: 3}
+--- !u!114 &6143695467854946577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118014344356169521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c0bc0102f580a46a12f44aafc7b680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalIndex: 1

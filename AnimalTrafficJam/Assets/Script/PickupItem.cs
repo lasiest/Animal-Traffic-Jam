@@ -7,9 +7,21 @@ public class PickupItem : MonoBehaviour
     private Inventory inventory;
     public GameObject itemButton;
     [SerializeField] private AudioClip Collect;
+    private bool isPickedUp;
+
+    public bool IsPickedUp
+    {
+        get
+        {
+            return isPickedUp;
+        }
+    }
+
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+
+        isPickedUp = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -25,11 +37,11 @@ public class PickupItem : MonoBehaviour
                     }
                     SoundManager.instance.PlaySound(Collect);
                     Instantiate(itemButton, inventory.slots[i].transform,false);
+                    isPickedUp = true;
                     Destroy(gameObject);
                     break;
                 }
             }
         }
-
     }
 }
