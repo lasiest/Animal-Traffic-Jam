@@ -21,6 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/EncyExplain2.unity
     guid: 03043ce20ab475f408ed8434586ce825
   - enabled: 1
+    path: Assets/Scenes/EncyExplain3.unity
+    guid: 96a9d3bd057a4d547a97a1520d239d07
+  - enabled: 1
+    path: Assets/Scenes/EncyExplain4.unity
+    guid: 09e9f0160c234424ca5c1efc94c06b8a
+  - enabled: 1
+    path: Assets/Scenes/EncyExplain5.unity
+    guid: fa9f271dd68c7534ebc5bf19aa3787b6
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 5cc108d9444f62d46a8a5ba6740114b6
   - enabled: 1

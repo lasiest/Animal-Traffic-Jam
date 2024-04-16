@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 314239120}
   - component: {fileID: 314239119}
   m_Layer: 5
-  m_Name: Button kakatua
+  m_Name: Button 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1039112525}
         m_TargetAssemblyTypeName: levelSelectionManager, Assembly-CSharp
-        m_MethodName: EncyExplain2
+        m_MethodName: EncyExplain4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 602269436}
   - component: {fileID: 602269435}
   m_Layer: 5
-  m_Name: Button Kucing
+  m_Name: Button 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1819,7 +1819,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1039112525}
         m_TargetAssemblyTypeName: levelSelectionManager, Assembly-CSharp
-        m_MethodName: EncyExplain
+        m_MethodName: EncyExplain3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2825,7 +2825,7 @@ GameObject:
   - component: {fileID: 1318161077}
   - component: {fileID: 1318161076}
   m_Layer: 5
-  m_Name: Button Kucing
+  m_Name: Button 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2910,7 +2910,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1039112525}
         m_TargetAssemblyTypeName: levelSelectionManager, Assembly-CSharp
-        m_MethodName: EncyExplain
+        m_MethodName: EncyExplain5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3889,7 +3889,7 @@ GameObject:
   - component: {fileID: 1779280443}
   - component: {fileID: 1779280442}
   m_Layer: 5
-  m_Name: Button kakatua
+  m_Name: Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4157,7 +4157,7 @@ GameObject:
   - component: {fileID: 1902786961}
   - component: {fileID: 1902786960}
   m_Layer: 5
-  m_Name: Button Kucing
+  m_Name: Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

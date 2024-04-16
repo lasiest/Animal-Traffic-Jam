@@ -159,6 +159,21 @@ public class levelSelectionManager : MonoBehaviour
         SceneManager.LoadScene("EncyExplain2");
     }
 
+    public void EncyExplain3()
+    {
+        SceneManager.LoadScene("EncyExplain3");
+    }
+
+    public void EncyExplain4()
+    {
+        SceneManager.LoadScene("EncyExplain4");
+    }
+
+    public void EncyExplain5()
+    {
+        SceneManager.LoadScene("EncyExplain5");
+    }
+
     public void Setting()
     {
         SceneManager.LoadScene("Settings");
