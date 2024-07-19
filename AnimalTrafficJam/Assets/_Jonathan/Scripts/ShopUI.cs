@@ -26,7 +26,7 @@ public class ShopUI : MonoBehaviour
 
         if (PlayerPrefs.GetInt("speedUpgraded") == 1)
         {
-            upgradeSpeedButton.interactable = true;
+            upgradeSpeedButton.interactable = false;
             upgradeSpeedText.text = "Maxed Upgraded";
         }
         else
